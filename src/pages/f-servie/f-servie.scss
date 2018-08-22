@@ -1,0 +1,92 @@
+page-f-servie {
+ 
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1700px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+   
+    .taill {
+      width: 100%;  
+   
+   background-repeat:no-repeat;
+   
+   background-size:cover;
+   background-position: center center ;
+   }
+   
+   
+   /* On small screens, set height to 'auto' for sidenav and grid */
+   @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height: auto;} 
+   }
+   
+   .no-scroll .scroll-content{
+     overflow: auto;//auto 
+   }
+   
+   table {
+   counter-reset: tableCount;     
+   }
+   .counterCell:before {              
+   content: counter(tableCount); 
+   counter-increment: tableCount; 
+   }
+
+
+   
+.ion-content
+{
+    background-color: rgba(253, 254, 255, 0.87);;
+}
+[text-color="color"] {
+  color: #FBEEC1;
+}
+
+.p
+{
+  margin-left: 12em;
+
+font-size:  medium;
+font-family: 'Comic Sans MS ', Helvetica, Arial, sans-serif;
+}
+
+h1 { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; }
+
+h3 { color: rgba(143, 90, 47, 0.87); font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: 300; line-height: 32px; margin: 0 0 14px; }
+  
+h4 { color: #a12907; font-size: 24px; font-family: 'Signika', sans-serif; padding-bottom: 10px; }
+
+h5 { font-size: 16px; }
+
+.reste {
+  font-size: 20px;
+  color: #f70000;
+
+}
+
+
+}

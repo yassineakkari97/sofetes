@@ -1,0 +1,240 @@
+
+
+<ion-content  class=" no-scroll simplexml preload locale-en ion-content  ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="width:250px; background-color: #DAAD86;" >
+      <img [src]="sanitize(Image1)" style="display:block;width:280px;height:220px;margin-left:auto;margin-right:auto;" /> <br>
+     
+      <ul class="nav nav-pills nav-stacked">
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="StayHere()" clear>  <ion-icon name="construct"></ion-icon>Tableau de board</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToReservation()" clear>  <ion-icon name="briefcase"></ion-icon> Reservation</button></ion-item></li>
+
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToGA()" clear><ion-icon name="clipboard"></ion-icon> Gestion d'article</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToGC()" clear> <ion-icon name="people"></ion-icon> Clients</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToFournisseurs()" clear> <ion-icon name="people"></ion-icon>  Fournisseurs</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToCaise()" clear>   <ion-icon name="logo-usd"></ion-icon>Caise</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="GoToService()" clear>  <ion-icon name="construct"></ion-icon>Services</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="GoToFactures()" clear>  <ion-icon name="clipboard"></ion-icon>Factures</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToEP()" clear> <ion-icon name="logo-usd"></ion-icon>Etat de prevision</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="Logout()" clear>  <ion-icon name="log-out"></ion-icon>Deconnexion</button></ion-item></li>
+
+
+
+      </ul><br>
+
+
+    
+    </div>
+
+    <div class="col-sm-9">
+
+      
+
+
+
+          <br><br>
+
+
+   <h1>Tableau de board </h1>
+  
+
+          <br>  <br>  <br>
+          <table class="row" style="border: 0" class='flex'>
+          
+            <tr>
+                <th class="col-sm-4" >  
+                  <ion-card>
+                      <ion-card-header class='c'>
+                Nombre de Reservations total:  {{reservations}}  
+                    </ion-card-header>
+                  
+                  </ion-card>
+                
+                </th>
+                <th>
+                    <ion-card>
+                        <ion-card-header class='c1'>
+
+                     Reservations payer  :  {{reservationp}}
+                        </ion-card-header>
+                      
+                      </ion-card>     
+               </th>
+               <th>
+                  <ion-card>
+                      <ion-card-header class='c2'>
+
+                      Reservations non payer  :  {{reservationnp}}
+                      </ion-card-header>
+                
+                    </ion-card>     
+             </th> <th>
+                <ion-card>
+                    <ion-card-header class='c3'>
+
+                   Reservations partiellement payer  : {{reservationpp}}
+                </ion-card-header>
+                   
+                  </ion-card>     
+           </th>
+
+          </tr>         
+          </table>
+          <br>  <br>  <br>
+
+          <table style="border: 0">
+       
+               <tr>
+                       <th>
+   <div   style="width:700px;height:400px;">
+                    <canvas baseChart  
+                  
+                                [datasets]="lineChartData"
+                                [labels]="lineChartLabels"
+                                [options]="lineChartOptions"
+                                [colors]="lineChartColors"
+                                [legend]="lineChartLegend"
+                                [chartType]="lineChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                    </div>
+                       </th>
+             
+                         
+                      <th><div style=' width:100px;'></div> <th>
+                         
+                     
+
+                       <th   >
+                         <div class="cardd" >
+
+                        <ion-card >
+                          <ion-card-header>
+                              Prochaine reservation
+                           </ion-card-header>
+                        
+                          <ion-list>
+                                  <ion-item><button ion-button color="beige" clear> <ion-icon name="key"  item-start></ion-icon> Identifiant : EVT-{{id}}</button></ion-item>
+                                  <ion-item><button ion-button color="beige" clear>  <ion-icon name="person" item-start ></ion-icon>Client : {{client}}  <button ion-button color="beige" clear> <ion-icon name="calendar"  item-start  ></ion-icon>Date : {{datee}}</button> </button></ion-item>
+                                  <ion-item><button ion-button color="beige" clear><ion-icon name="alarm"  item-start></ion-icon> debut : {{eventstart}}</button> <button ion-button color="beige" clear>  <ion-icon name="alarm"  item-start></ion-icon> fin : {{eventend}}</button> </ion-item>
+
+                          </ion-list>
+                        </ion-card>
+                      </div>
+                       </th>
+               </tr>
+          </table>
+        
+                   
+
+                
+        <table style="border: 0">
+
+          <tr>
+              <th>  
+              
+                      <div  style="width:500px;height:300px;">
+                    <canvas baseChart
+                                [data]="doughnutChartData"
+                                [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+
+              </th>
+  <th>
+ 
+
+    
+          <div    style="width:500px;height:300px;">  <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType" ></canvas>
+
+</div>
+
+</th>
+
+</tr>       
+</table>
+
+<br><br><br>
+
+          <table style="border: 0">
+          
+              <tr>
+                  <th>  
+                    <ion-item>
+                      <ion-label>Search Date</ion-label>
+                      <ion-datetime displayFormat="YYYY-MM-DD	 " min="2016-12-31" max="2028-12-31" [(ngModel)]="eventDate"></ion-datetime>
+                    </ion-item>
+                  
+                  </th>
+                  <th>
+                    
+    <div padding>
+      <button ype="button" class="btn btn-warning"  (click)="Search()" >Start</button>
+    </div>             </th>
+ 
+            </tr>         
+            </table>
+
+ 
+          <ion-row>
+            <ion-col col-12 col-md-3>
+              <ion-row>
+                <ion-col col-3 no-padding>
+                  <button ion-button full clear icon-only mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+                    <ion-icon name="ios-arrow-back"></ion-icon>
+                  </button>
+                </ion-col>
+                <ion-col col-6 no-padding>
+                  <button ion-button full clear mwlCalendarToday [(viewDate)]="viewDate">Aujourd'hui</button>
+                </ion-col>
+                <ion-col col-3 no-padding>
+                  <button ion-button full clear icon-only mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+         
+          <iq-calendar-week-hours-view
+            [viewDate]="viewDate"
+            [events]="events"
+            [hourSegments]="1"
+            [dayStartHour]="12"
+           [dayEndHour]="23"
+            (eventClicked)="handleEvent($event.event)"
+            (hourSegmentClicked)="hourSegmentClicked($event)"
+            (eventTimesChanged)="eventTimesChanged($event)"
+            [weekStartsOn]="1"
+            [refresh]="refresh"
+            [locale]="locale">
+          </iq-calendar-week-hours-view>
+         
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+</ion-content>
+

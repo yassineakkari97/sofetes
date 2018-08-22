@@ -1,0 +1,122 @@
+
+  <ion-content  class=" no-scroll simplexml preload locale-en ion-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  
+  
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav" style="width:250px; background-color: #DAAD86;" >
+        <img [src]="sanitize(Image1)" style="display:block;width:280px;height:220px;margin-left:auto;margin-right:auto;" /> <br>
+       
+        <ul class="nav nav-pills nav-stacked">
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="pushToDashboard()" clear>  <ion-icon name="construct"></ion-icon>Tableau de board</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToReservation()" clear>  <ion-icon name="briefcase"></ion-icon> Reservation</button></ion-item></li>
+
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToGA()" clear><ion-icon name="clipboard"></ion-icon> Gestion d'article</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToGC()" clear> <ion-icon name="people"></ion-icon> Clients</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToFournisseurs()" clear> <ion-icon name="people"></ion-icon>  Fournisseurs</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToCaise()" clear>   <ion-icon name="logo-usd"></ion-icon>Caise</button></ion-item></li>
+          
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="GoToService()" clear>  <ion-icon name="construct"></ion-icon>Services</button></ion-item></li>
+        <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="GoToFactures()" clear>  <ion-icon name="clipboard"></ion-icon>Factures</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="PushToEP()" clear> <ion-icon name="logo-usd"></ion-icon>Etat de prevision</button></ion-item></li>
+          <li ><ion-item style=" background-color: #DAAD86; height:40px;"><button ion-button color="beige" (click)="Logout()" clear>  <ion-icon name="log-out"></ion-icon>Deconnexion</button></ion-item></li>
+  
+        </ul><br>
+  
+      
+      </div>
+  
+      <div class="col-sm-9">
+        <br><br>
+        <h1>Ajouter des Articles au Stock</h1>
+        <br><br> <br><br>
+      <div align="left"> 
+          <h5>Fournisseurs</h5>
+        <select class="form-control" [(ngModel)]="reservation" style="width:300px; "  >
+            <option   >--------------------</option>
+
+            <option  *ngFor="let item of items1 "  >{{item.nom }}: {{item.cin}}</option>
+
+            </select>
+          </div>
+
+<br>
+
+            <div align="left"> 
+                <h5>Article</h5>
+              <select class="form-control" [(ngModel)]="article" style="width:300px; " >
+                  <option   >--------------------</option>
+
+                  <option  *ngFor="let item of items0 "  >ART-{{item.id}}:  {{item.nom}}</option>
+     
+                  </select>
+                </div>
+
+
+
+          <br><br>
+
+          <ion-item>
+              <ion-label>Quantité</ion-label>
+              <ion-input type="number" [(ngModel)]="quantite" ></ion-input>
+            </ion-item>
+
+             
+      <div padding>
+          <button ype="button" class="btn btn-warning"  (click)="Add()" >Valider l'ajout</button>
+        </div>
+
+
+            <br>
+
+            
+            <br>
+                <table class="table table-hover" >
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Article</th>
+                       <th scope="col">Quantité</th>
+                       <th scope="col">Prix</th>
+
+                     
+
+                      <th></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                       
+    
+                          <tr  *ngFor="let item of facture " >
+                             
+                              <th scope="row" class="counterCell" >{{row}}</th>
+                              <td>{{item.article}}</td>
+                              <td>{{item.quantite}}</td>
+                              <td>{{item.prix}}</td>
+
+                            </tr>
+                            
+                  </tbody>
+                </table>
+                
+        
+
+          
+                <div padding>
+                    <button ype="button" class="btn btn-warning"  (click)="end()" >valider la facture</button>
+                  </div>
+
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  </ion-content>

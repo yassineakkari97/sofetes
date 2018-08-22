@@ -1,0 +1,47 @@
+
+<ion-content padding class="taill fixed  no-scroll">
+  <ion-scroll scrollbar-x="false" scrollbar-y="false" > </ion-scroll>
+<br><br><br><br><br>
+
+    <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Site<span>Sofetes</span></div>
+		</div>
+		<br>
+		<div class="login">
+      <input type="text" [(ngModel)]="email" name="email" placeholder="email"/>
+      <input type="password" [(ngModel)]="pass" name="pass" placeholder="password"/>
+      <input type="password" [(ngModel)]="cpass" name="cpass"  placeholder="confirme password"/>
+      <br><br><br>
+      <button block color="navbar1"  ion-button (click)="registerUser()" class="butt"  item-left>Register</button>
+      <button class="nv" ion-button color="brown" (click)="PushToSingup()" clear>deja un membre? Login</button>
+
+
+    </div>
+    
+
+
+</ion-content>
+
+  
+  <!--
+
+   
+
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" [(ngModel)]="email" name="email" placeholder="email"/>
+        <input type="password" [(ngModel)]="pass" name="pass" placeholder="password"/>
+        <input type="password" [(ngModel)]="cpass" name="cpass"  placeholder="confirme password"/>
+        <button block color="dark" ion-button (click)="registerUser()" item-left>Register</button>
+
+        <p class="message">deja un membre?  </p>
+
+        <button ion-button color="orange" (click)="PushToSingup()" clear> login</button>
+      </form>
+      
+    </div>
+  </div>
+-->

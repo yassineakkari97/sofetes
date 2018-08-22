@@ -1,0 +1,218 @@
+page-reception {
+  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+  .row.content {height: 2000px}
+    
+  /* Set gray background color and 100% height */
+  .sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height: auto;} 
+  }
+
+  .flex{
+    display: flex;
+
+  }
+
+  .WebContainer{
+    width: 100%;
+    height: auto;
+}
+
+  .taill {
+    width: 100%;
+    height: auto;
+
+
+ background-repeat:no-repeat;
+
+ background-size:cover;
+ background-position: center center ;
+}
+
+
+.a{
+  width:auto
+
+ 
+}
+
+
+.no-scroll .scroll-content{
+  overflow: auto;//auto 
+}
+.navbar {
+  padding: 0;
+  transition: background 0.5s ease-in-out 0s, padding 0.5s ease-in-out 0s;
+}
+.navbar-brand {
+  float: left;
+  font-size: 18px;
+  height: 10px;
+  line-height: 2px;
+  padding: 2px;
+}
+
+
+
+.custom-event a {
+  color: #fff !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cal-day-view .cal-event {
+  white-space: normal;
+}
+
+.cal-day-view .cal-event-container {
+  width: 100% !important;
+}
+
+.cal-day-view .cal-time {
+  width: 40px !important;
+  font-size: smaller !important;
+}
+
+.cal-week-hours-view .cal-day-container:first-child {
+  width: 40px !important;
+  flex: none;
+}
+
+.cal-week-hours-view .cal-header:first-child {
+  width: 40px !important;
+  flex: none;
+  border: none;
+}
+
+.cal-header {
+  border-left: solid 1px #e1e1e1;
+}
+
+.cal-today {
+  color: color($colors, primary) !important;
+}
+
+
+.cal-day-headers {
+  display: flex;
+}
+
+.cal-header {
+  flex: 1;
+  text-align: center;
+}
+
+.cal-header:first-child {
+  flex: 0.5;
+  text-align: center;
+}
+
+.cal-days-container {
+  display: flex;
+}
+
+.cal-day-container {
+  flex: 1;
+}
+
+.cal-day-container:first-child {
+  flex: 0.5;
+}
+
+.cal-day-view .cal-week-hour-odd {
+  background: #ffffff;
+}
+
+.cal-day-view .cal-week-hour-even {
+  background: #fafafa;
+}
+
+.cal-day-view .cal-hour:not(:last-child) .cal-hour-segment,
+.cal-day-view .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+  border-bottom: 1px dotted #e1e1e1;
+}
+
+.cal-day-view .cal-hour-rows {
+  overflow-y: hidden;
+}
+.truc-a-centrer {
+  right: 50%;
+
+}
+.view{
+ 
+}
+
+.c
+{
+    color:	#AFAFAF;
+}
+.c2
+{
+    color:#FF0000;
+}.c1
+{
+    color: #34C924;
+}.c3
+{
+    color: #ED7F10;
+}
+
+
+@media screen and (min-width: 800px) { /*The following CSS runs only for displays with a width (in pixels) of more than 800px*/
+ 
+}
+
+@media screen and (max-width: 1000px) { /*The following CSS runs only for displays with a width (in pixels) of less than 800px*/
+ 
+}
+
+.ion-content
+{
+    background-color: rgba(253, 254, 255, 0.87);;
+}
+[text-color="color"] {
+  color: #FBEEC1;
+}
+
+.p
+{
+  margin-left: 15em;
+
+font-size:  medium;
+font-family: 'Comic Sans MS ', Helvetica, Arial, sans-serif;
+}
+
+
+h1 { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; }
+
+
+
+
+
+
+p {  font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 32px; margin: 0 0 24px; }
+
+
+.cardd {height:340px; 
+  width:400;
+      }
+
+
+}

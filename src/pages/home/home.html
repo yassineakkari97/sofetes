@@ -1,0 +1,28 @@
+
+<ion-content padding class="taill fixed  no-scroll">
+  <ion-scroll scrollbar-x="false" scrollbar-y="false" > </ion-scroll>
+<br><br><br><br><br>
+
+    <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Site<span>Sofetes</span></div>
+		</div>
+		<br>
+		<div class="login">
+        <input type="text" [(ngModel)]="email"  name="email" placeholder="username"/>
+        <input type="password" [(ngModel)]="pass"  name="pass" placeholder="password"/>
+        <button block color="navbar1" ion-button (click)="EmailLogin()" item-left class="butt">Connecter</button>
+       <button class="nv" ion-button color="brown" (click)="PushToSingup()" clear> Nouveau Admin?</button>
+
+       
+    </div>
+    
+
+
+</ion-content>
+
+  
+
+
+ 
